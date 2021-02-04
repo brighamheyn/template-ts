@@ -1,0 +1,171 @@
+/* Grid */
+
+.grid:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+/*
+.col-xs-0 {
+     display: none;
+}
+
+@media (min-width: 624px)  {  
+     .col-sm-0 {
+          display: none;
+     }
+}
+
+@media (min-width: 768px)  {  
+     .col-md-0 {
+          display: none;
+     }
+}
+
+@media (min-width: 896px)  {  
+     .col-lg-0 {
+          display: none;
+     }
+}
+
+@media (min-width: 1024px)  {  
+     .col-xl-0 {
+          display: none;
+     }
+}
+*/
+
+@mixin grid-generator($size, $cols) {
+	@for $i from 0 through $cols {
+		@if $i == 0 {
+			.col-#{$size}-0-#{$cols} {
+				display: none;
+			}
+		} @else {
+			.col-#{$size}-#{$i}-#{$cols} {
+				display: block;
+				width: percentage($i / $cols);
+				float: left;
+			}
+		}
+	}
+}
+
+@mixin responsive-hider($size) {
+	.#{$size}-hide {
+		display: none;
+	}
+}
+
+@mixin responsive-shower($size) {
+	.#{$size}-show {
+		display: block;
+	}
+}
+
+$breakpoints: (
+	("xs", 30em),
+	// 480px
+		("sm", 43em),
+	// 688px
+		("md", 53em),
+	// 848px
+		("lg", 62em),
+	// 992px
+		("xl", 82em),
+	// 1312px
+		("xxl", 102em) // 1632px
+);
+
+@mixin respond-from($media) {
+	@each $breakpoint in $breakpoints {
+		@if $media == nth($breakpoint, 1) {
+			@media (min-width: #{nth($breakpoint, 2)}) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin respond-until($media) {
+	@each $breakpoint in $breakpoints {
+		@if $media == nth($breakpoint, 1) {
+			@media (max-width: #{nth($breakpoint, 2)}) {
+				@content;
+			}
+		}
+	}
+}
+
+@each $n in (2, 3, 4, 6, 8, 9, 12, 15, 16) {
+	@include grid-generator(xs, $n);
+
+	@include respond-from(sm) {
+		@include grid-generator(sm, $n);
+	}
+
+	@include respond-from(md) {
+		@include grid-generator(md, $n);
+	}
+
+	@include respond-from(lg) {
+		@include grid-generator(lg, $n);
+	}
+
+	@include respond-from(xl) {
+		@include grid-generator(xl, $n);
+	}
+
+	@include respond-from(xxl) {
+		@include grid-generator(xxl, $n);
+	}
+}
+
+// hide
+
+@include respond-until(xs) {
+	@include responsive-hider(xs);
+}
+
+@include respond-until(sm) {
+	@include responsive-hider(sm);
+}
+
+@include respond-until(md) {
+	@include responsive-hider(md);
+}
+
+@include respond-until(lg) {
+	@include responsive-hider(lg);
+}
+
+@include respond-until(xl) {
+	@include responsive-hider(xl);
+}
+
+// show
+
+@include respond-until(xs) {
+	@include responsive-shower(xs);
+}
+
+@include respond-until(sm) {
+	@include responsive-shower(sm);
+}
+
+@include respond-until(md) {
+	@include responsive-shower(md);
+}
+
+@include respond-until(lg) {
+	@include responsive-shower(lg);
+}
+
+@include respond-until(xl) {
+	@include responsive-shower(xl);
+}
+
+/*
+
+*/

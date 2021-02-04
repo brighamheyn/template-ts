@@ -1,0 +1,156 @@
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.bolder {
+	font-weight: 800;
+}
+
+.light {
+	font-weight: 300;
+}
+
+.lighter {
+	font-weight: 100;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.fs-in {
+	font-size: inherit !important;
+}
+
+.fs-ini {
+	font-size: initial !important;
+}
+
+.fs-un {
+	font-size: unset !important;
+}
+
+$size: 8;
+@while $size <= 50 {
+	.fs-#{$size} {
+		font-size: #{$size}px;
+	}
+
+	$size: $size + 1;
+}
+
+$size: 1;
+@while $size <= 50 {
+	@if $size <= 5 {
+		.fs-#{$size}em {
+			font-size: #{$size}em;
+		}
+
+		.fs-#{$size}rem {
+			font-size: #{$size}rem;
+		}
+	}
+
+	.fs-#{$size}vh {
+		font-size: #{$size}vh;
+	}
+
+	.fs-#{$size}vw {
+		font-size: #{$size}vh;
+	}
+
+	$size: $size + 1;
+}
+
+@each $one in (0, 1, 2, 3, 4, 5) {
+	@each $tenth in (1, 2, 3, 4, 5, 6, 7, 8, 9) {
+		$size: (($one * 10) + $tenth)/10;
+
+		.fs-#{$one}_#{$tenth}vh {
+			font-size: #{$size}vh;
+		}
+
+		.fs-#{$one}_#{$tenth}vw {
+			font-size: #{$size}vh;
+		}
+
+		.fs-#{$one}_#{$tenth}em {
+			font-size: #{$size}em;
+		}
+
+		.fs-#{$one}_#{$tenth}rem {
+			font-size: #{$size}rem;
+		}
+	}
+}
+
+/* Line Height */
+
+.lh-in {
+	line-height: inherit !important;
+}
+
+.lh-ini {
+	line-height: initial !important;
+}
+
+.lh-un {
+	line-height: unset !important;
+}
+
+$lh: 8;
+@while $lh <= 40 {
+	.lh-#{$lh} {
+		line-height: #{$lh/10} !important;
+	}
+
+	$lh: $lh + 1;
+}
+
+@each $one in (1, 2, 3, 4, 5, 6, 7, 8, 9) {
+	@each $tenth in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) {
+		$size: (($one * 10) + $tenth)/10;
+
+		.lh-#{$one}_#{$tenth} {
+			line-height: #{$size};
+		}
+
+		.lh-#{$one}#{$tenth}px {
+			line-height: #{$one}#{$tenth}px;
+		}
+
+		.lh-#{$one}_#{$tenth}vh {
+			line-height: #{$size}vh !important;
+		}
+
+		.lh-#{$one}_#{$tenth}vw {
+			line-height: #{$size}vh !important;
+		}
+	}
+}
+
+@each $one in (0, 1, 2) {
+	@each $tenth in (1, 2, 3, 4, 5, 6, 7, 8, 9) {
+		$size: (($one * 10) + $tenth)/10;
+
+		.ls-#{$one}_#{$tenth} {
+			letter-spacing: #{$size}px;
+		}
+	}
+}

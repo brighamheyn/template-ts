@@ -1,0 +1,463 @@
+$zindex: 1;
+@while $zindex <= 20 {
+	.z-#{$zindex} {
+		z-index: #{$zindex} !important;
+	}
+
+	.z-n#{$zindex} {
+		z-index: -#{$zindex} !important;
+	}
+
+	$zindex: $zindex + 1;
+}
+
+.block {
+	display: block !important;
+}
+
+.inline-block {
+	display: inline-block !important;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.flow-root {
+	display: flow-root;
+}
+
+/* Box Sizing */
+
+.bs-content {
+	box-sizing: content-box !important;
+}
+
+.bs-border {
+	box-sizing: border-box !important;
+}
+
+.bs-in {
+	box-sizing: inherit !important;
+}
+
+.bs-ini {
+	box-sizing: initial !important;
+}
+
+.bs-un {
+	box-shadow: unset !important;
+}
+
+/* Flex */
+
+.flex {
+	display: flex;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row !important;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column !important;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-right {
+	align-items: right;
+}
+
+.align-left {
+	align-items: left;
+}
+
+.align-baseline {
+	align-items: baseline;
+}
+
+.align-end {
+	align-items: flex-end;
+	align-content: flex-end;
+}
+
+.align-self-right {
+	align-self: right !important;
+}
+
+.align-self-left {
+	align-self: left !important;
+}
+
+.align-self-baseline {
+	align-self: baseline !important;
+}
+
+.align-self-end {
+	align-self: flex-end !important;
+}
+
+.align-self-center {
+	align-self: center !important;
+}
+
+.align-self-start {
+	align-self: flex-start !important;
+}
+
+.justify-baseline {
+	justify-content: baseline;
+}
+
+.justify-end {
+	justify-items: flex-end;
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-items: center;
+	justify-content: center;
+}
+
+.justify-right {
+	justify-content: right;
+}
+
+.justify-left {
+	justify-content: left;
+}
+
+.justify-self-baseline {
+	justify-self: baseline !important;
+}
+
+.justify-self-end {
+	justify-self: flex-end !important;
+}
+
+.justify-self-start {
+	justify-self: flex-start !important;
+}
+
+.justify-self-center {
+	justify-self: center !important;
+}
+
+.justify-self-right {
+	justify-self: right !important;
+}
+
+.justify-self-left {
+	justify-self: left !important;
+}
+
+.space-between {
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.space-evenly {
+	justify-content: space-evenly;
+	align-content: space-evenly;
+}
+
+.space-around {
+	justify-content: space-around;
+	align-content: space-around;
+}
+
+.space-center {
+	justify-content: center;
+	align-content: center;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-shrink {
+	flex-shrink: 1;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-2 {
+	flex: 2;
+}
+
+.flex-3 {
+	flex: 3;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+/* Position */
+.abs {
+	position: absolute;
+}
+
+.rel {
+	position: relative;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+$pos: 0;
+@while $pos <= 50 {
+	.top-#{$pos} {
+		top: #{$pos}px;
+	}
+
+	.rgt-#{$pos} {
+		right: #{$pos}px;
+	}
+
+	.lft-#{$pos} {
+		left: #{$pos}px;
+	}
+
+	.btm-#{$pos} {
+		bottom: #{$pos}px;
+	}
+
+	.top-n#{$pos} {
+		top: -#{$pos}px;
+	}
+
+	.rgt-n#{$pos} {
+		right: -#{$pos}px;
+	}
+
+	.lft-n#{$pos} {
+		left: -#{$pos}px;
+	}
+
+	.btm-n#{$pos} {
+		bottom: -#{$pos}px;
+	}
+
+	$pos: $pos + 1;
+}
+
+/* Height and Width */
+
+.h-in {
+	height: inherit !important;
+}
+
+.h-ini {
+	height: initial !important;
+}
+
+.h-un {
+	height: unset !important;
+}
+
+.w-in {
+	width: inherit !important;
+}
+
+.w-ini {
+	width: initial !important;
+}
+
+.w-un {
+	width: unset !important;
+}
+
+$size: 5;
+@while $size <= 1000 {
+	.h-#{$size} {
+		height: #{$size}px;
+	}
+
+	.w-#{$size} {
+		width: #{$size}px;
+	}
+
+	.max-h-#{$size} {
+		max-height: #{$size}px;
+	}
+
+	.max-w-#{$size} {
+		max-width: #{$size}px;
+	}
+
+	.min-h-#{$size} {
+		min-height: #{$size}px;
+	}
+
+	.min-w-#{$size} {
+		min-width: #{$size}px;
+	}
+
+	$size: $size + 5;
+}
+
+$size: 1;
+@while $size <= 100 {
+	.h-#{$size} {
+		height: #{$size}px;
+	}
+
+	.h-#{$size}p {
+		height: #{$size}#{"%"};
+	}
+
+	.h-#{$size}vh {
+		height: #{$size}vh;
+	}
+
+	.h-#{$size}vw {
+		height: #{$size}vw;
+	}
+
+	.w-#{$size} {
+		width: #{$size}px;
+	}
+
+	.w-#{$size}p {
+		width: #{$size}#{"%"};
+	}
+
+	.w-#{$size}vh {
+		width: #{$size}vh;
+	}
+
+	.w-#{$size}vw {
+		width: #{$size}vw;
+	}
+
+	.max-h-#{$size}p {
+		max-height: #{$size}#{"%"};
+	}
+
+	.max-h-#{$size}vh {
+		max-height: #{$size}vh;
+	}
+
+	.max-h-#{$size}vw {
+		max-height: #{$size}vw;
+	}
+
+	.max-w-#{$size}p {
+		max-width: #{$size}#{"%"};
+		flex-grow: 0;
+	}
+
+	.max-w-#{$size}vh {
+		max-width: #{$size}vh;
+	}
+
+	.max-w-#{$size}vw {
+		max-width: #{$size}vw;
+	}
+
+	.min-h-#{$size} {
+		min-height: #{$size}px;
+	}
+
+	.min-h-#{$size}p {
+		min-height: #{$size}#{"%"};
+	}
+
+	.min-h-#{$size}vh {
+		min-height: #{$size}vh;
+	}
+
+	.min-h-#{$size}vw {
+		min-height: #{$size}vw;
+	}
+
+	.min-w-#{$size} {
+		min-width: #{$size}px;
+	}
+
+	.min-w-#{$size}p {
+		min-width: #{$size}#{"%"};
+	}
+
+	.min-w-#{$size}vh {
+		min-width: #{$size}vh;
+	}
+
+	.min-w-#{$size}vw {
+		min-width: #{$size}vw;
+	}
+
+	$size: $size + 1;
+}
+
+/* 
+  provide height/width in terms of vh/vw/p for decimals 0.1 - 9.9
+
+  e.g. h-1_5vh, max-w-8_5vw
+*/
+@each $one in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) {
+	@each $tenth in (1, 2, 3, 4, 5, 6, 7, 8, 9) {
+		$size: (($one * 10) + $tenth)/10;
+
+		.h-#{$one}_#{$tenth}p {
+			height: #{$size}#{"%"};
+		}
+
+		.h-#{$one}_#{$tenth}vh {
+			height: #{$size}vh;
+		}
+
+		.h-#{$one}_#{$tenth}vw {
+			height: #{$size}vw;
+		}
+
+		.w-#{$one}_#{$tenth}p {
+			width: #{$size}#{"%"};
+		}
+
+		.w-#{$one}_#{$tenth}vh {
+			width: #{$size}vh;
+		}
+
+		.w-#{$one}_#{$tenth}vw {
+			width: #{$size}vw;
+		}
+
+		.max-h-#{$one}_#{$tenth}p {
+			max-height: #{$size}#{"%"};
+		}
+
+		.max-h-#{$one}_#{$tenth}vh {
+			max-height: #{$size}vh;
+		}
+
+		.max-h-#{$one}_#{$tenth}vw {
+			max-height: #{$size}vw;
+		}
+
+		.max-w-#{$one}_#{$tenth}p {
+			max-width: #{$size}#{"%"};
+		}
+
+		.max-w-#{$one}_#{$tenth}vh {
+			max-width: #{$size}vh;
+		}
+
+		.max-w-#{$one}_#{$tenth}vw {
+			max-width: #{$size}vw;
+		}
+	}
+}
